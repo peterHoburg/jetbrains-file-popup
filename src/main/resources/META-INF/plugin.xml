@@ -6,15 +6,8 @@
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.peterhoburg.jetbrainshelpplugin.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.peterhoburg.jetbrainshelpplugin.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
 
     <actions>
         <action
