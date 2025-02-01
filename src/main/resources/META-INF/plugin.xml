@@ -18,12 +18,11 @@
 
     <actions>
         <action
-                id="ShowPopupAction"
+                id="CustomHelpTextPopupAction"
                 class="com.github.peterhoburg.jetbrainshelpplugin.actions.ShowPopupAction"
-                text="Show Popup"
-                description="Shows a popup when Ctrl+L is pressed">
-            <!-- Bind the action to Ctrl+L in the default keymap -->
-            <keyboard-shortcut keymap="$default" first-keystroke="ctrl L"/>
+                text="Show Custom Help text popup"
+                description="Shows a popup when Ctrl+H is pressed">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl H"/>
         </action>
     </actions>
 </idea-plugin>
