@@ -1,6 +1,6 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.peterhoburg.jetbrainshelpplugin</id>
+    <id>com.github.peterhoburg.jetbrainsfilepopup</id>
     <name>jetbrains-help-plugin</name>
     <vendor>peterhoburg</vendor>
 
@@ -12,7 +12,7 @@
     <actions>
         <action
                 id="CustomHelpTextPopupAction"
-                class="com.github.peterhoburg.jetbrainshelpplugin.actions.ShowPopupAction"
+                class="com.github.peterhoburg.jetbrainsfilepopup.actions.ShowPopupAction"
                 text="Show Custom Help text popup"
                 description="Shows a popup when Ctrl+H is pressed">
             <keyboard-shortcut keymap="$default" first-keystroke="ctrl H"/>

@@ -1,4 +1,4 @@
-package com.github.peterhoburg.jetbrainshelpplugin
+package com.github.peterhoburg.jetbrainsfilepopup
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls

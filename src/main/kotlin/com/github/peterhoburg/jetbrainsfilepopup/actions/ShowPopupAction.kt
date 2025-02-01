@@ -1,4 +1,4 @@
-package com.github.peterhoburg.jetbrainshelpplugin.actions
+package com.github.peterhoburg.jetbrainsfilepopup.actions
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
@@ -13,7 +13,7 @@ import javax.swing.event.DocumentListener
 
 class ShowPopupAction : AnAction() {
     override fun actionPerformed(e: AnActionEvent) {
-        val helpFileName = "JETBRAINS_HELP_POPUP.html"
+        val helpFileName = "JETBRAINS_FILE_POPUP.html"
         val userHome = System.getProperty("user.home")
         val helpFilePath= "$userHome/$helpFileName"
 
