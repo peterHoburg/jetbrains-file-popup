@@ -13,8 +13,17 @@ import javax.swing.event.DocumentListener
 
 class ShowPopupAction : AnAction() {
     override fun actionPerformed(e: AnActionEvent) {
-        val fileStream = ShowPopupAction::class.java.getResourceAsStream("/help.html")
-        val fileContent = fileStream?.bufferedReader()?.use { it.readText() } ?: ""
+        val helpFileName = "JETBRAINS_HELP_POPUP.html"
+        val userHome = System.getProperty("user.home")
+        val helpFilePath= "$userHome/$helpFileName"
+
+        val helpFile = java.io.File(helpFilePath)
+        val fileContent = if (helpFile.exists() && helpFile.canRead()) {
+            helpFile.readText()
+        } else {
+            "This is populated from \"$helpFilePath\""
+        }
+
         val originalContent = if (fileContent.trim().startsWith("<html", ignoreCase = true))
             fileContent
         else
@@ -46,7 +55,7 @@ class ShowPopupAction : AnAction() {
 
         val popup = JBPopupFactory.getInstance()
             .createComponentPopupBuilder(panel, searchField)
-            .setTitle("Popup")
+            .setTitle(helpFilePath)
             .setResizable(true)
             .setMovable(true)
             .setRequestFocus(true)
