@@ -3,6 +3,7 @@
 # file-popup Changelog
 
 ## [Unreleased]
+Update deps.
 
 ## [0.0.2] - 2025-02-01
 
