@@ -15,4 +15,15 @@
     <applicationListeners>
         <listener class="com.github.peterhoburg.jetbrainshelpplugin.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
     </applicationListeners>
+
+    <actions>
+        <action
+                id="ShowPopupAction"
+                class="com.github.peterhoburg.jetbrainshelpplugin.actions.ShowPopupAction"
+                text="Show Popup"
+                description="Shows a popup when Ctrl+L is pressed">
+            <!-- Bind the action to Ctrl+L in the default keymap -->
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl L"/>
+        </action>
+    </actions>
 </idea-plugin>

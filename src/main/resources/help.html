@@ -1,0 +1,83 @@
+<html>
+<body>
+<h1>IDEA Vim Keybindings Help</h1>
+
+<h2>Scrolling &amp; Centering</h2>
+<ul>
+  <li><strong>Ctrl-D</strong>: Scroll down half a page and recenter the view.</li>
+  <li><strong>Ctrl-U</strong>: Scroll up half a page and recenter the view.</li>
+</ul>
+
+<h2>Change Next Occurrence</h2>
+<ul>
+  <li><strong>Leader+j (Space + j)</strong>: Search for the word under the cursor, then jump back and start a change on
+    the next match.
+  </li>
+</ul>
+
+<h2>Deletion &amp; Pasting</h2>
+<ul>
+  <li><strong>x (Normal mode)</strong>: Delete a character without overwriting the default register.</li>
+  <li><strong>p (Visual mode)</strong>: Paste over the selection without clobbering the yank register.</li>
+</ul>
+
+<h2>Formatting</h2>
+<ul>
+  <li><strong>Q</strong>: Format the selected text (remaps Ex mode to use <code>gq</code> for formatting).</li>
+</ul>
+
+<h2>Debugging &amp; Breakpoints</h2>
+<ul>
+  <li><strong>Leader+db (Space + db)</strong>: Start a debug session.</li>
+  <li><strong>Leader+b (Space + b)</strong>: Toggle a breakpoint on the current line.</li>
+</ul>
+
+<h2>Window &amp; Tab Management</h2>
+<ul>
+  <li><strong>Leader+v (Space + v)</strong>: Move the current tab right (or split vertically).</li>
+  <li><strong>Leader+h (Space + h)</strong>: Move the current tab down.</li>
+  <li><strong>Leader+xs or Alt+q</strong>: Close the current content (e.g., a split or tab).</li>
+  <li><strong>Shift+Esc</strong>: Hide the active window.</li>
+  <li>
+    <strong>Shift+Arrow Keys</strong>:
+    <ul class="sub-list">
+      <li><strong>Shift+Up</strong>: Stretch the split upward.</li>
+      <li><strong>Shift+Down</strong>: Stretch the split downward.</li>
+      <li><strong>Shift+Right</strong>: Stretch the split to the right.</li>
+      <li><strong>Shift+Left</strong>: Stretch the split to the left.</li>
+    </ul>
+  </li>
+  <li><strong>Alt+[ and Alt+]</strong>: Cycle between splitters (next/previous).</li>
+</ul>
+
+<h2>Error Navigation</h2>
+<ul>
+  <li><strong>[d</strong>: Jump to the next error.</li>
+  <li><strong>]d</strong>: Jump to the previous error.</li>
+  <li><strong>Leader+dw (Space + dw)</strong>: Open the Problems View Tool Window.</li>
+</ul>
+
+<h2>Fuzzier Plugin Commands</h2>
+<ul>
+  <li><strong>Leader+pf (Space + pf)</strong>: Launch Fuzzier search.</li>
+  <li><strong>Leader+mf (Space + mf)</strong>: Activate Fuzzy Mover.</li>
+  <li><strong>Leader+gf (Space + gf)</strong>: Launch Fuzzier VCS search.</li>
+</ul>
+
+<h2>IDE Actions</h2>
+<ul>
+  <li><strong>Leader+e (Space + e)</strong>: Activate the Project Tool Window.</li>
+  <li><strong>Leader+t (Space + t)</strong>: Activate the Terminal Tool Window.</li>
+  <li><strong>Leader+r (Space + r)</strong>: Reopen the last closed tab.</li>
+</ul>
+
+<h2>Key Handler Settings</h2>
+<p>These settings determine which keys are processed by the IDE versus Vim:</p>
+<ul>
+  <li><strong>IDE-handled keys</strong>: Ctrl-A, Ctrl-C, Ctrl-F, Ctrl-K, Ctrl-R, Ctrl-S, Ctrl-V, Ctrl-X.</li>
+  <li><strong>Vim-handled keys</strong>: Ctrl-B, Ctrl-D, Ctrl-I, Ctrl-O, Ctrl-U, Alt+], Alt+[.</li>
+</ul>
+
+<p class="emphasis">=== End of Help ===</p>
+</body>
+</html>
