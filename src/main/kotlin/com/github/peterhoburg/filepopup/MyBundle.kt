@@ -1,4 +1,4 @@
-package com.github.peterhoburg.jetbrainsfilepopup
+package com.github.peterhoburg.filepopup
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls

@@ -1,4 +1,4 @@
-# jetbrains-file-popup
+# file-popup
 
 ![Build](https://github.com/peterHoburg/jetbrains-file-popup/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
@@ -28,7 +28,7 @@ To keep everything working, do not remove `<!-- ... -->` sections.
 
 - Using the IDE built-in plugin system:
 
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "jetbrains-file-popup"</kbd> >
+  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "file-popup"</kbd> >
   <kbd>Install</kbd>
 
 - Using JetBrains Marketplace:

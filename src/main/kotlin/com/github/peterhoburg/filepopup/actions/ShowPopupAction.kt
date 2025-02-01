@@ -1,4 +1,4 @@
-package com.github.peterhoburg.jetbrainsfilepopup.actions
+package com.github.peterhoburg.filepopup.actions
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
