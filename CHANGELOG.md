@@ -1,6 +1,6 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
-# jetbrains-help-plugin Changelog
+# jetbrains-file-popup Changelog
 
 ## [Unreleased]
 ### Added
