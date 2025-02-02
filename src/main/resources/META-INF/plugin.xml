@@ -9,6 +9,9 @@
     <extensions defaultExtensionNs="com.intellij">
         <applicationService
                 serviceImplementation="com.github.peterhoburg.filepopup.settings.FilePopupSettings"/>
+        <projectConfigurable id="Settings.FilePopup"
+                             key="FilePopup.settings.name"
+                             instance="com.github.peterhoburg.filepopup.settings.FilePopupSettingsConfigurable"/>
     </extensions>
 
     <actions>
@@ -20,4 +23,5 @@
             <keyboard-shortcut keymap="$default" first-keystroke="ctrl H"/>
         </action>
     </actions>
+
 </idea-plugin>

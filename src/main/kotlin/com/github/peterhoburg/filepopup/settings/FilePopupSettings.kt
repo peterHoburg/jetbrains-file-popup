@@ -12,5 +12,9 @@ class FilePopupSettings(internal val project: Project): SimplePersistentStateCom
     var popupFilePath
         get () = state.popupFilePath
         set(value) {state.popupFilePath = value}
+    companion object {
+        @JvmStatic
+        fun getInstance(project: Project): FilePopupSettings = project.service()
+    }
 }
 
