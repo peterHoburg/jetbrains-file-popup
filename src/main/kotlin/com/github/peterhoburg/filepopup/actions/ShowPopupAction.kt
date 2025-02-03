@@ -1,5 +1,6 @@
 package com.github.peterhoburg.filepopup.actions
 
+import com.github.peterhoburg.filepopup.settings.FilePopupSettings
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.ui.popup.JBPopupFactory
@@ -13,15 +14,12 @@ import javax.swing.event.DocumentListener
 
 class ShowPopupAction : AnAction() {
     override fun actionPerformed(e: AnActionEvent) {
-        val helpFileName = "JETBRAINS_FILE_POPUP.html"
-        val userHome = System.getProperty("user.home")
-        val helpFilePath= "$userHome/$helpFileName"
-
-        val helpFile = java.io.File(helpFilePath)
+        val popupFilePath = e.project?.let { FilePopupSettings.getInstance(it).popupFilePath }
+        val helpFile = java.io.File(popupFilePath)
         val fileContent = if (helpFile.exists() && helpFile.canRead()) {
             helpFile.readText()
         } else {
-            "This is populated from \"$helpFilePath\""
+            "This is populated from \"$popupFilePath\""
         }
 
         val originalContent = if (fileContent.trim().startsWith("<html", ignoreCase = true))
@@ -55,7 +53,7 @@ class ShowPopupAction : AnAction() {
 
         val popup = JBPopupFactory.getInstance()
             .createComponentPopupBuilder(panel, searchField)
-            .setTitle(helpFilePath)
+            .setTitle(popupFilePath)
             .setResizable(true)
             .setMovable(true)
             .setRequestFocus(true)
@@ -72,6 +70,6 @@ class ShowPopupAction : AnAction() {
                 line
             }
         }
-        return  highlightedLines.joinToString("\n")
+        return highlightedLines.joinToString("\n")
     }
 }
