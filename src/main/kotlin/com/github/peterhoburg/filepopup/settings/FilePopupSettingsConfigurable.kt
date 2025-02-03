@@ -14,21 +14,22 @@ import kotlin.io.path.isDirectory
 import kotlin.io.path.notExists
 
 
-internal class FilePopupSettingsConfigurable(private val project: Project): BoundSearchableConfigurable(
+internal class FilePopupSettingsConfigurable(private val project: Project) : BoundSearchableConfigurable(
     "FilePopup",
     "FilePopup",
     _id = ID
 ) {
     private val settings
         get() = FilePopupSettings.getInstance(project)
+
     companion object {
-    const val ID = "Settings.FilePopup"
-        }
+        const val ID = "Settings.FilePopup"
+    }
 
     override fun createPanel(): DialogPanel {
-        return panel{
-            row{
-                customCssTextFieldWithBrowserButton()
+        return panel {
+            row {
+                filePicker()
                     .align(AlignX.FILL)
                     .enabled(true)
                     .applyIfEnabled()
@@ -40,7 +41,10 @@ internal class FilePopupSettingsConfigurable(private val project: Project): Boun
         }
     }
 
-    private fun validateCustomStylesheetPath(builder: ValidationInfoBuilder, textField: TextFieldWithBrowseButton): ValidationInfo? {
+    private fun validateFilePopupPath(
+        builder: ValidationInfoBuilder,
+        textField: TextFieldWithBrowseButton
+    ): ValidationInfo? {
         val text = textField.text
         val file = runCatching { Path.of(text) }.getOrNull()
         if (file == null || file.notExists() || file.isDirectory()) {
@@ -49,7 +53,7 @@ internal class FilePopupSettingsConfigurable(private val project: Project): Boun
         return null
     }
 
-    private fun Row.customCssTextFieldWithBrowserButton(): Cell<TextFieldWithBrowseButton> {
+    private fun Row.filePicker(): Cell<TextFieldWithBrowseButton> {
         val field = textFieldWithBrowseButton(
             project = project,
             fileChooserDescriptor = FileChooserDescriptorFactory.createSingleFileDescriptor("html")
@@ -57,6 +61,6 @@ internal class FilePopupSettingsConfigurable(private val project: Project): Boun
         field.applyToComponent {
             disposable?.let { Disposer.register(it, this@applyToComponent) }
         }
-        return field.validationOnInput(::validateCustomStylesheetPath).validationOnApply(::validateCustomStylesheetPath)
+        return field.validationOnInput(::validateFilePopupPath).validationOnApply(::validateFilePopupPath)
     }
 }
