@@ -1,5 +1,6 @@
 package com.github.peterhoburg.filepopup.actions
 
+import com.github.peterhoburg.filepopup.settings.FilePopupSettings
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.ui.popup.JBPopupFactory
@@ -13,10 +14,7 @@ import javax.swing.event.DocumentListener
 
 class ShowPopupAction : AnAction() {
     override fun actionPerformed(e: AnActionEvent) {
-        val helpFileName = "JETBRAINS_FILE_POPUP.html"
-        val userHome = System.getProperty("user.home")
-        val helpFilePath= "$userHome/$helpFileName"
-
+        val helpFilePath = e.project?.let { FilePopupSettings.getInstance(it).popupFilePath }
         val helpFile = java.io.File(helpFilePath)
         val fileContent = if (helpFile.exists() && helpFile.canRead()) {
             helpFile.readText()

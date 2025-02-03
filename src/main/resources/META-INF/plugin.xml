@@ -9,14 +9,16 @@
     <extensions defaultExtensionNs="com.intellij">
         <applicationService
                 serviceImplementation="com.github.peterhoburg.filepopup.settings.FilePopupSettings"/>
+
         <projectConfigurable id="Settings.FilePopup"
-                             key="FilePopup.settings.name"
+                             nonDefaultProject="false"
+                             displayName="File Popup"
                              instance="com.github.peterhoburg.filepopup.settings.FilePopupSettingsConfigurable"/>
     </extensions>
 
     <actions>
         <action
-                id="CustomFileTextPopupAction"
+                id="CustomFileTextP"
                 class="com.github.peterhoburg.filepopup.actions.ShowPopupAction"
                 text="Show Custom File text popup"
                 description="Shows a popup when Ctrl+H is pressed">

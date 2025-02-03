@@ -38,10 +38,8 @@ internal class FilePopupSettingsConfigurable(private val project: Project): Boun
                     )
             }
         }
-
-
-
     }
+
     private fun validateCustomStylesheetPath(builder: ValidationInfoBuilder, textField: TextFieldWithBrowseButton): ValidationInfo? {
         val text = textField.text
         val file = runCatching { Path.of(text) }.getOrNull()
