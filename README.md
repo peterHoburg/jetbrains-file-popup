@@ -5,8 +5,10 @@
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/26449.svg)](https://plugins.jetbrains.com/plugin/26449)
 
 <!-- Plugin description -->
-Super basic plugin that brings up a popup that is populated based on a file. Defaults to
-`<user_home>/JETBRAINS_FILE_POPUP.html`.
+Press a keyboard shortcut (defaults to ctrl-h) and a popup that contains the contents of a user defined file will open.
+Defaults to `<user_home>/JETBRAINS_FILE_POPUP.html`, but can be set to anything in settings.
+
+This is useful for cheatsheets, quick references, and anything else you want to read, but isn't in your current project.
 <!-- Plugin description end -->
 
 ## Installation
